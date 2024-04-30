@@ -1,2 +1,1 @@
-# Imejges-For-BJ
-Qwik JS app with cool imejges ! 
+# Quick description, app written in next for game voting

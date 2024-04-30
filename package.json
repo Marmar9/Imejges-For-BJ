@@ -1,0 +1,41 @@
+{
+  "name": "Imejges for BJ",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+
+    "db:migrate": "drizzle-kit generate:pg",
+    "db:studio": "drizzle-kit studio",
+    "db:push": "drizzle-kit push:pg"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.32.6",
+    "@trpc/client": "^10.37.1",
+    "@trpc/react-query": "^10.37.1",
+    "@trpc/server": "^10.37.1",
+    "autoprefixer": "10.4.15",
+    "drizzle-orm": "^0.30.9",
+    "next": "14.2.3",
+    "pg": "^8.11.5",
+    "postcss": "8.4.28",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwind": "^4.0.0",
+    "zod": "^3.22.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.5.0",
+    "@types/pg": "^8.11.5",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
+    "drizzle-kit": "^0.20.17",
+    "eslint": "8.47.0",
+    "eslint-config-next": "14.2.3",
+    "node-gyp": "^9.4.0",
+    "typescript": "5.1.6"
+  }
+}
