@@ -1,6 +1,17 @@
-import { initTRPC } from "@trpc/server";
+import { initTRPC} from '@trpc/server';
+import { NextRequest } from 'next/server';
 
-const t = initTRPC.create();
-export const router = t.router;
-export const publicProcedure = t.procedure;
-export const createCallerFactory = t.createCallerFactory
+export const createContext = async (req?:NextRequest) => {
+  return {
+      req: req,
+  };
+};
+
+export type Context = Awaited<ReturnType<typeof createContext>>;
+
+export const t = initTRPC.context<Context>().create();
+
+
+type ala = {
+    
+}

@@ -1,1 +1,5 @@
-# Quick description, app written in next for game voting
+## Quick description 
+
+App written in next for game voting using trpc, drizzle and next js
+
+
