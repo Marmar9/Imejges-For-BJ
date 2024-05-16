@@ -2,7 +2,7 @@
 
 # Drizzle Stuff
 /drizzle
-
+.env
 # Bun
 bun.lockb
 
