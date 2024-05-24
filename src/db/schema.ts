@@ -8,7 +8,7 @@ export const users = pgTable('users', {
 export const registrations = pgTable('registrations', {
     id: serial("id").primaryKey(),
     date: date("date").default(sql`CURRENT_DATE`),
-    gameName: varchar("gameName", {length: 100 }).unique().notNull(),
+    gameName: varchar("gameName", { length: 100 }).unique().notNull(),
     description: text("description").notNull(),
     voteCount: integer("voteCount"),
     userId: integer("userId"),
@@ -17,8 +17,9 @@ export const registrations = pgTable('registrations', {
     return {
         gameNameIdx: uniqueIndex("gameNameIdx").on(t.gameName),
         userRelation: foreignKey({
-        columns: [t.userId],
-        foreignColumns: [users.id],
-        name: "userRelation"
-    })}
+            columns: [t.userId],
+            foreignColumns: [users.id],
+            name: "userRelation"
+        })
+    }
 });

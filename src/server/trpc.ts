@@ -1,4 +1,4 @@
-import { initTRPC} from '@trpc/server';
+import { initTRPC } from '@trpc/server';
 import { NextRequest } from 'next/server';
 
 export const createContext = async (req?:NextRequest) => {
@@ -10,8 +10,3 @@ export const createContext = async (req?:NextRequest) => {
 export type Context = Awaited<ReturnType<typeof createContext>>;
 
 export const t = initTRPC.context<Context>().create();
-
-
-type ala = {
-    
-}

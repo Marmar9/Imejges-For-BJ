@@ -4,7 +4,7 @@ import { env } from "@/env";
 import { Pool } from "pg";
 
 const pool = new Pool({
-  connectionString: env.PGURL 
+    connectionString: env.PGURL
 });
 
-export const db = drizzle(pool, {schema});
+export const db = drizzle(pool, { schema });
