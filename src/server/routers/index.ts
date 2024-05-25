@@ -4,7 +4,7 @@ import adminRouter from "./adminRouter";
 import protectedRouter from "./protectedRouter";
 import { db } from "@/db";
 import { registrations } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 const router = t.router;
 const publicProcedure = t.procedure;
 
@@ -14,7 +14,7 @@ export default router({
 
   getProjects: publicProcedure.input(z.object({ yearDate: z.string().optional() })).query(async (opts) => {
     if (opts.input.yearDate) {
-      // Do something
+      return await db.select({ gameName: registrations.gameName, description: registrations.description }).from(registrations).where(eq(sql`EXTRACT(YEAR FROM date)`, `${opts.input.yearDate}`));
     }
 
     return await db.select({ gameName: registrations.gameName, description: registrations.description }).from(registrations);
